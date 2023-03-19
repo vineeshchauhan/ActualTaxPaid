@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- jquery -->
+  <script src="library/jquery-3.6.4.min.js"></script>
+  <!-- bootstrap css and js -->
+  <script src="library/bootstrap-5.0.2/js/bootstrap.bundle.min.js"></script>
+  <link href="library/bootstrap-5.0.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- awesome font css -->
+  <link rel="stylesheet" href="library/font-awesome-4.7.0/css/font-awesome.min.css">
+  <!-- bootstrap table css and js -->
+  <link rel="stylesheet" href="library/bootstrap-table/bootstrap-table.min.css">
+  <script src="library/bootstrap-table/bootstrap-table.min.js"></script>
+
+  <!-- data files -->
+  <script src="data/salary_and_tax.js"></script>
+  <script src="data/previous_year_data.js"></script>
+  <!--<script src="property.js"></script> -->
+  <!-- project css -->
+  <link rel="stylesheet" href="project.css">
+  <title>Actual Tax Paid</title>
+
+</head>
+
+<body>
+  <!-- top container of website -->
+  <div class="top-container">
+    <!-- Home Button -->
+    <button type="submit" onclick="window.open('index.html','_self');" class="btn btn-default"><i
+        class="fa fa-home"></i> Home</button>
+    <!-- About US Button -->
+    <button type="submit" onclick="handleMenuButton('taxInfoDiv','aboutUsDiv');" class="btn btn-default">
+      <i class="fa fa-user-circle" aria-hidden="true"></i> About US</button>
+    <!-- Mission Button -->
+    <button type="submit" onclick="handleMenuButton('taxInfoDiv','ourMissionDiv');" class="btn btn-default">
+      <i class="fa fa-rocket" aria-hidden="true"></i> Our Mission</button>
+    <!--Previous Year Data-->
+    <button type="submit" onclick="handleMenuButton('taxInfoDiv','previousYearInfoDiv');" class="btn btn-default">
+      <i class="fa fa-fast-backward" aria-hidden="true"></i> Previou Year Data</button>
+    <!-- Tax Info Div (About Us Div and Our Mission Div below) -->
+    <div id="taxInfoDiv">
+      <h3>The purpose of the site is to show how much tax TAXPAYERS actually pays in India.</h3>
+
+      <!-- Container div for Salary and Tax -->
+      <div class="container">
+        <table id="salaryTaxTable" class="table">
+          <thead class="table-dark">
+            <tr>
+              <th data-field="totalSalary" data-sortable="false">Total Salary</th>
+              <th data-field="directTax" data-sortable="false">Direct Tax</th>
+              <th data-field="directTaxPerc" data-sortable="false">Direct Tax %</th>
+              <th data-field="netSalary" data-sortable="false">Net Salary</th>
+              <th data-field="indirectTax" data-sortable="false">Indirect Tax</th>
+              <th data-field="indirectTaxPerc" data-sortable="false">Indirect Tax %</th>
+              <th data-field="totalTax" data-sortable="false">Total Tax</th>
+              <th data-field="totalTaxPerc" data-sortable="false">Total Tax %</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <!-- Container div for April -->
+      <div class="container">
+        <!-- div for April Button -->
+        <div class="d-grid gap-2 padding">
+          <button type="button" class="btn btn-primary" data-bs-toggle="collapse"
+            data-bs-target="#tableApril">April</button>
+        </div>
+        <!-- div for April Table -->
+        <div class="collapse" id="tableApril">
+          <table id="aprilSalaryTaxTable" class="table">
+            <thead class="table-dark">
+              <tr>
+                <th data-field="totalSalary" data-sortable="false">Total Salary</th>
+                <th data-field="directTax" data-sortable="false">Direct Tax</th>
+                <th data-field="directTaxPerc" data-sortable="false">Direct Tax %</th>
+                <th data-field="netSalary" data-sortable="false">Net Salary</th>
+                <th data-field="indirectTax" data-sortable="false">Indirect Tax</th>
+                <th data-field="indirectTaxPerc" data-sortable="false">Indirect Tax %</th>
+                <th data-field="totalTax" data-sortable="false">Total Tax</th>
+                <th data-field="totalTaxPerc" data-sortable="false">Total Tax %</th>
+              </tr>
+            </thead>
+          </table>
+          <table id="taxdataAprilTable" data-unique-id="ItemNo." data-sort-name="itemno" data-sort-order="asc"
+            class="class">
+            <thead class="table-dark">
+              <tr>
+                <th data-field="itemno" data-sortable="false">ItemNo.</th>
+                <th data-field="type" data-sortable="false">Type</th>
+                <th data-field="description" data-sortable="false">Description</th>
+                <th data-field="price" data-sortable="false">Price of Good or Service</th>
+                <th data-field="tax" data-sortable="true">Tax(GST/Excise/VAT/)</th>
+                <th data-field="bill" data-sortable="false">Bill</th>
+                <th data-field="comment" data-sortable="false">Comment</th>
+                <th data-field="total" data-sortable="false">Total Tax</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+      <!-- Container div for May -->
+      <div class="container">
+        <!-- div for May Button -->
+        <div class="d-grid gap-2 padding">
+          <button type="button" class="btn btn-primary" data-bs-toggle="collapse"
+            data-bs-target="#tableMay">May</button>
+        </div>
+        <!-- div for May Table -->
+        <div class="collapse table-bordered" id="tableMay">
+          <table id="maySalaryTaxTable" class="table">
+            <thead class="table-dark">
+              <tr>
+                <th data-field="totalSalary" data-sortable="false">Total Salary</th>
+                <th data-field="directTax" data-sortable="false">Direct Tax</th>
+                <th data-field="directTaxPerc" data-sortable="false">Direct Tax %</th>
+                <th data-field="netSalary" data-sortable="false">Net Salary</th>
+                <th data-field="indirectTax" data-sortable="false">Indirect Tax</th>
+                <th data-field="indirectTaxPerc" data-sortable="false">Indirect Tax %</th>
+                <th data-field="totalTax" data-sortable="false">Total Tax</th>
+                <th data-field="totalTaxPerc" data-sortable="false">Total Tax %</th>
+              </tr>
+            </thead>
+          </table>
+          <table id="taxdataMayTable" data-unique-id="ItemNo." data-sort-name="itemno" data-sort-order="asc"
+            class="class">
+            <thead class="table-dark">
+              <tr>
+                <th data-field="itemno" data-sortable="false">ItemNo.</th>
+                <th data-field="type" data-sortable="false">Type</th>
+                <th data-field="description" data-sortable="false">Description</th>
+                <th data-field="price" data-sortable="false">Price of Good or Service</th>
+                <th data-field="tax" data-sortable="true">Tax(GST/Excise/VAT/)</th>
+                <th data-field="bill" data-sortable="false">Bill</th>
+                <th data-field="comment" data-sortable="false">Comment</th>
+                <th data-field="total" data-sortable="false">Total Tax</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- About Us Div -->
+  <div id="aboutUsDiv" hidden>
+    <p class="fortypxfont">
+      It is about US not me. I believe the actual tax paid by individual is much higher. The
+      direct tax paid on income and indirect tax paid on every item purchased from taxed income
+      is very higher. There is no study which shows total tax paid by individual or house hold
+      person in India. The website is to track the expense of individual done using taxed salary.
+      It will show us how much we end up paying as tax.
+    </p>
+  </div>
+  <!-- Mission Div -->
+  <div id="ourMissionDiv" hidden>
+    <p>
+    <ol class="fortypxfont">
+      <li>To collect concrete data about actual tax paid.</li>
+      <li>Making people aware about actual tax.</li>
+      <li>Bulding orginization with people different walks of life.</li>
+      <li>Reaching out to government(finance ministry) to listen to individual tax payer concerns.</li>
+    </ol>
+    </p>
+  </div>
+  <div id="previousYearInfoDiv" hidden>
+    <p class="fortypxfont">The information of previous year direct tax paid by an individual concerned here.<br>
+      The data of FY 2022-2023 is as of date.
+      <div class="container">
+        <table id="previousYearDataTable">
+            <thead class="table-dark">
+              <tr>
+                <th data-field="assessmentyear" data-sortable="false">Assessment Year</th>
+                <th data-field="taxableIncome" data-sortable="false">Taxable Income</th>
+                <th data-field="taxLiability" data-sortable="false">Tax Liability</th>
+                <th data-field="taxPerc" data-sortable="false">Tax %/th>
+              </tr>
+            </thead>
+          </table>
+          </div>
+        <div class="container">
+        <h3 style="text-align: center;">Screenshot taken from Income Tax Website</h3><br>
+        <img src="img/Table_Previous_Year.PNG" alt="Previous Year Data Missing" width="560" height="333">
+        <img src="img/Graph_Previous_Year.PNG" alt="Previous Year Data Missing" width="560" height="333">
+      </div>
+
+    </p>
+  </div>
+  <script>
+
+    // method for updating Div
+    function handleMenuButton(targetDiv, sourceDiv) {
+      document.getElementById(targetDiv).innerHTML = document.getElementById(sourceDiv).innerHTML;
+    }
+    // method for updating Div
+    $(function () {
+      // Salary and Tax top Table Handling
+      $(document).ready(function () {
+        var $salaryTaxTable = $('#salaryTaxTable');
+        $salaryTaxTable.bootstrapTable({
+          data: salaryAndTax
+        });
+        // April Total 
+        var $salaryTaxTable = $('#aprilSalaryTaxTable');
+        $salaryTaxTable.bootstrapTable({
+          data: salaryAndTax
+        });
+        // April Tax and Salary
+        var $taxdataAprilTable = $('#taxdataAprilTable');
+        $taxdataAprilTable.bootstrapTable({
+          data: purchaseAndTaxApril
+        });
+        $taxdataAprilTable.bootstrapTable('togglePagination');
+      });
+      // May Total
+      var $salaryTaxTable = $('#maySalaryTaxTable');
+      $salaryTaxTable.bootstrapTable({
+        data: salaryAndTax
+      });
+      // May Table Handling
+      var $taxdataMayTable = $('#taxdataMayTable');
+      $taxdataMayTable.bootstrapTable({
+        data: purchaseAndTaxApril
+      });
+      $taxdataMayTable.bootstrapTable('togglePagination');
+
+      //Previous year Table Handling
+      var $previousYearDataTable = $('#previousYearDataTable');
+      $previousYearDataTable.bootstrapTable({
+        data: previousYearData
+      });
+
+    });
+  </script>
+</body>
+
+</html>
