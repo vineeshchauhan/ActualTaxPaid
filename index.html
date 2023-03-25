@@ -14,57 +14,37 @@
   <script src="library/bootstrap-table/bootstrap-table.min.js"></script>
 
   <!-- data files -->
-  <script src="data/previousYearData.js"></script>
-  <script src="data/salaryAndTaxTotal.js"></script>
-  <script src="data/taxTransactionApril.js"></script>
-  <script src="data/taxTransactionMay.js"></script>
-  <script src="data/taxTransactionJun.js"></script>
-  <script src="data/taxTransactionJul.js"></script>
-  <script src="data/taxTransactionAug.js"></script>
-  <script src="data/taxTransactionSep.js"></script>
-  <script src="data/taxTransactionOct.js"></script>
-  <script src="data/taxTransactionNov.js"></script>
-  <script src="data/taxTransactionDec.js"></script>
-  <script src="data/taxTransactionJan.js"></script>
-  <script src="data/taxTransactionFeb.js"></script>
-  <script src="data/taxTransactionMar.js"></script>
-
+  <script src="data/salary_and_tax.js"></script>
+  <script src="data/previous_year_data.js"></script>
   <!--<script src="property.js"></script> -->
   <!-- project css -->
   <link rel="stylesheet" href="project.css">
-
-  <!-- Image -->
-  <a href="#"><img id="logo" src="img/Logo.PNG"></a>
-  <title>Actual TAX Paid</title>
+  <title>Actual Tax Paid</title>
 
 </head>
 
-<body style="background-image: url('img/coin.jfif');">
-  <body>
+<body>
   <!-- top container of website -->
   <div class="top-container">
     <!-- Home Button -->
-    <button type="submit" onclick="window.open('index.html','_self');" class="glossy-button glossy-button--brown"><i
+    <button type="submit" onclick="window.open('index.html','_self');" class="btn btn-default"><i
         class="fa fa-home"></i> Home</button>
     <!-- About US Button -->
-    <button type="submit" onclick="handleMenuButton('taxInfoDiv','aboutUsDiv');" class="glossy-button glossy-button--brown">
+    <button type="submit" onclick="handleMenuButton('taxInfoDiv','aboutUsDiv');" class="btn btn-default">
       <i class="fa fa-user-circle" aria-hidden="true"></i> About US</button>
     <!-- Mission Button -->
-    <button type="submit" onclick="handleMenuButton('taxInfoDiv','ourMissionDiv');" class="glossy-button glossy-button--brown">
+    <button type="submit" onclick="handleMenuButton('taxInfoDiv','ourMissionDiv');" class="btn btn-default">
       <i class="fa fa-rocket" aria-hidden="true"></i> Our Mission</button>
     <!--Previous Year Data-->
-    <button type="submit" onclick="handleMenuButton('taxInfoDiv','previousYearInfoDiv');" class="glossy-button glossy-button--brown">
+    <button type="submit" onclick="handleMenuButton('taxInfoDiv','previousYearInfoDiv');" class="btn btn-default">
       <i class="fa fa-fast-backward" aria-hidden="true"></i> Previou Year Data</button>
-      <button type="submit" onclick="handleMenuButton('taxInfoDiv','contactUsDiv');" class="glossy-button glossy-button--brown">
-        <i class="fa fa-envelope-o" aria-hidden="true"></i> Contact Us</button>
     <!-- Tax Info Div (About Us Div and Our Mission Div below) -->
-    <div id="taxInfoDiv"><br>
-      <marquee direction="right" behavior="alternate" style="background:rgb(252, 251, 250);border:rgb(145, 97, 47) 3px SOLID" >
-      <h3> How much tax TAXPAYERS actually pays in India? Let's Find Out.</h3>
-      </marquee>
+    <div id="taxInfoDiv">
+      <h3>The purpose of the site is to show how much tax TAXPAYERS actually pays in India.</h3>
+
       <!-- Container div for Salary and Tax -->
       <div class="container">
-        <table id="salaryTaxTable" class="table table-color-brown">
+        <table id="salaryTaxTable" class="table">
           <thead class="table-dark">
             <tr>
               <th data-field="totalSalary" data-sortable="false">Total Salary</th>
@@ -83,12 +63,12 @@
       <div class="container">
         <!-- div for April Button -->
         <div class="d-grid gap-2 padding">
-          <button type="button"  class="btn" data-bs-toggle="collapse"
-            data-bs-target="#tableApril" style="background-color: rgb(145, 97, 47)">April</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="collapse"
+            data-bs-target="#tableApril">April</button>
         </div>
         <!-- div for April Table -->
         <div class="collapse" id="tableApril">
-          <table id="aprilSalaryTaxTable" class="table table-color-brown">
+          <table id="aprilSalaryTaxTable" class="table">
             <thead class="table-dark">
               <tr>
                 <th data-field="totalSalary" data-sortable="false">Total Salary</th>
@@ -103,7 +83,7 @@
             </thead>
           </table>
           <table id="taxdataAprilTable" data-unique-id="ItemNo." data-sort-name="itemno" data-sort-order="asc"
-            class="table-color-brown">
+            class="class">
             <thead class="table-dark">
               <tr>
                 <th data-field="itemno" data-sortable="false">ItemNo.</th>
@@ -123,12 +103,12 @@
       <div class="container">
         <!-- div for May Button -->
         <div class="d-grid gap-2 padding">
-          <button type="button" class="btn" data-bs-toggle="collapse"
-            data-bs-target="#tableMay" style="background-color: rgb(145, 97, 47)">May</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="collapse"
+            data-bs-target="#tableMay">May</button>
         </div>
         <!-- div for May Table -->
         <div class="collapse table-bordered" id="tableMay">
-          <table id="maySalaryTaxTable" class="table table-color-brown">
+          <table id="maySalaryTaxTable" class="table">
             <thead class="table-dark">
               <tr>
                 <th data-field="totalSalary" data-sortable="false">Total Salary</th>
@@ -143,397 +123,7 @@
             </thead>
           </table>
           <table id="taxdataMayTable" data-unique-id="ItemNo." data-sort-name="itemno" data-sort-order="asc"
-            class="table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="itemno" data-sortable="false">ItemNo.</th>
-                <th data-field="type" data-sortable="false">Type</th>
-                <th data-field="description" data-sortable="false">Description</th>
-                <th data-field="price" data-sortable="false">Price of Good or Service</th>
-                <th data-field="tax" data-sortable="true">Tax(GST/Excise/VAT/)</th>
-                <th data-field="bill" data-sortable="false">Bill</th>
-                <th data-field="comment" data-sortable="false">Comment</th>
-                <th data-field="total" data-sortable="false">Total Tax</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-      <div class="container">
-        <!-- div for Jun Button -->
-        <div class="d-grid gap-2 padding">
-          <button type="button" class="btn" data-bs-toggle="collapse"
-            data-bs-target="#tableJun" style="background-color: rgb(145, 97, 47)">Jun</button>
-        </div>
-        <!-- div for Jun Table -->
-        <div class="collapse table-bordered" id="tableJun">
-          <table id="junSalaryTaxTable" class="table table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="totalSalary" data-sortable="false">Total Salary</th>
-                <th data-field="directTax" data-sortable="false">Direct Tax</th>
-                <th data-field="directTaxPerc" data-sortable="false">Direct Tax %</th>
-                <th data-field="netSalary" data-sortable="false">Net Salary</th>
-                <th data-field="indirectTax" data-sortable="false">Indirect Tax</th>
-                <th data-field="indirectTaxPerc" data-sortable="false">Indirect Tax %</th>
-                <th data-field="totalTax" data-sortable="false">Total Tax</th>
-                <th data-field="totalTaxPerc" data-sortable="false">Total Tax %</th>
-              </tr>
-            </thead>
-          </table>
-          <table id="taxdataJunTable" data-unique-id="ItemNo." data-sort-name="itemno" data-sort-order="asc"
-            class="table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="itemno" data-sortable="false">ItemNo.</th>
-                <th data-field="type" data-sortable="false">Type</th>
-                <th data-field="description" data-sortable="false">Description</th>
-                <th data-field="price" data-sortable="false">Price of Good or Service</th>
-                <th data-field="tax" data-sortable="true">Tax(GST/Excise/VAT/)</th>
-                <th data-field="bill" data-sortable="false">Bill</th>
-                <th data-field="comment" data-sortable="false">Comment</th>
-                <th data-field="total" data-sortable="false">Total Tax</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-      <div class="container">
-        <!-- div for Jul Button -->
-        <div class="d-grid gap-2 padding">
-          <button type="button" class="btn" data-bs-toggle="collapse"
-            data-bs-target="#tableJul" style="background-color: rgb(145, 97, 47)">Jul</button>
-        </div>
-        <!-- div for Jul Table -->
-        <div class="collapse table-bordered" id="tableJul">
-          <table id="julSalaryTaxTable" class="table table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="totalSalary" data-sortable="false">Total Salary</th>
-                <th data-field="directTax" data-sortable="false">Direct Tax</th>
-                <th data-field="directTaxPerc" data-sortable="false">Direct Tax %</th>
-                <th data-field="netSalary" data-sortable="false">Net Salary</th>
-                <th data-field="indirectTax" data-sortable="false">Indirect Tax</th>
-                <th data-field="indirectTaxPerc" data-sortable="false">Indirect Tax %</th>
-                <th data-field="totalTax" data-sortable="false">Total Tax</th>
-                <th data-field="totalTaxPerc" data-sortable="false">Total Tax %</th>
-              </tr>
-            </thead>
-          </table>
-          <table id="taxdataJulTable" data-unique-id="ItemNo." data-sort-name="itemno" data-sort-order="asc"
-            class="table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="itemno" data-sortable="false">ItemNo.</th>
-                <th data-field="type" data-sortable="false">Type</th>
-                <th data-field="description" data-sortable="false">Description</th>
-                <th data-field="price" data-sortable="false">Price of Good or Service</th>
-                <th data-field="tax" data-sortable="true">Tax(GST/Excise/VAT/)</th>
-                <th data-field="bill" data-sortable="false">Bill</th>
-                <th data-field="comment" data-sortable="false">Comment</th>
-                <th data-field="total" data-sortable="false">Total Tax</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-      <div class="container">
-        <!-- div for Aug Button -->
-        <div class="d-grid gap-2 padding">
-          <button type="button" class="btn" data-bs-toggle="collapse"
-            data-bs-target="#tableAug" style="background-color: rgb(145, 97, 47)">Aug</button>
-        </div>
-        <!-- div for Aug Table -->
-        <div class="collapse table-bordered" id="tableAug">
-          <table id="augSalaryTaxTable" class="table table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="totalSalary" data-sortable="false">Total Salary</th>
-                <th data-field="directTax" data-sortable="false">Direct Tax</th>
-                <th data-field="directTaxPerc" data-sortable="false">Direct Tax %</th>
-                <th data-field="netSalary" data-sortable="false">Net Salary</th>
-                <th data-field="indirectTax" data-sortable="false">Indirect Tax</th>
-                <th data-field="indirectTaxPerc" data-sortable="false">Indirect Tax %</th>
-                <th data-field="totalTax" data-sortable="false">Total Tax</th>
-                <th data-field="totalTaxPerc" data-sortable="false">Total Tax %</th>
-              </tr>
-            </thead>
-          </table>
-          <table id="taxdataAugTable" data-unique-id="ItemNo." data-sort-name="itemno" data-sort-order="asc"
-            class="table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="itemno" data-sortable="false">ItemNo.</th>
-                <th data-field="type" data-sortable="false">Type</th>
-                <th data-field="description" data-sortable="false">Description</th>
-                <th data-field="price" data-sortable="false">Price of Good or Service</th>
-                <th data-field="tax" data-sortable="true">Tax(GST/Excise/VAT/)</th>
-                <th data-field="bill" data-sortable="false">Bill</th>
-                <th data-field="comment" data-sortable="false">Comment</th>
-                <th data-field="total" data-sortable="false">Total Tax</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-      <div class="container">
-        <!-- div for Sep Button -->
-        <div class="d-grid gap-2 padding">
-          <button type="button" class="btn" data-bs-toggle="collapse"
-            data-bs-target="#tableSep" style="background-color: rgb(145, 97, 47)">Sep</button>
-        </div>
-        <!-- div for Sep Table -->
-        <div class="collapse table-bordered" id="tableSep">
-          <table id="sepSalaryTaxTable" class="table table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="totalSalary" data-sortable="false">Total Salary</th>
-                <th data-field="directTax" data-sortable="false">Direct Tax</th>
-                <th data-field="directTaxPerc" data-sortable="false">Direct Tax %</th>
-                <th data-field="netSalary" data-sortable="false">Net Salary</th>
-                <th data-field="indirectTax" data-sortable="false">Indirect Tax</th>
-                <th data-field="indirectTaxPerc" data-sortable="false">Indirect Tax %</th>
-                <th data-field="totalTax" data-sortable="false">Total Tax</th>
-                <th data-field="totalTaxPerc" data-sortable="false">Total Tax %</th>
-              </tr>
-            </thead>
-          </table>
-          <table id="taxdataSepTable" data-unique-id="ItemNo." data-sort-name="itemno" data-sort-order="asc"
-            class="table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="itemno" data-sortable="false">ItemNo.</th>
-                <th data-field="type" data-sortable="false">Type</th>
-                <th data-field="description" data-sortable="false">Description</th>
-                <th data-field="price" data-sortable="false">Price of Good or Service</th>
-                <th data-field="tax" data-sortable="true">Tax(GST/Excise/VAT/)</th>
-                <th data-field="bill" data-sortable="false">Bill</th>
-                <th data-field="comment" data-sortable="false">Comment</th>
-                <th data-field="total" data-sortable="false">Total Tax</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-      <div class="container">
-        <!-- div for Oct Button -->
-        <div class="d-grid gap-2 padding">
-          <button type="button" class="btn" data-bs-toggle="collapse"
-            data-bs-target="#tableOct" style="background-color: rgb(145, 97, 47)">Oct</button>
-        </div>
-        <!-- div for Oct Table -->
-        <div class="collapse table-bordered" id="tableOct">
-          <table id="octSalaryTaxTable" class="table table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="totalSalary" data-sortable="false">Total Salary</th>
-                <th data-field="directTax" data-sortable="false">Direct Tax</th>
-                <th data-field="directTaxPerc" data-sortable="false">Direct Tax %</th>
-                <th data-field="netSalary" data-sortable="false">Net Salary</th>
-                <th data-field="indirectTax" data-sortable="false">Indirect Tax</th>
-                <th data-field="indirectTaxPerc" data-sortable="false">Indirect Tax %</th>
-                <th data-field="totalTax" data-sortable="false">Total Tax</th>
-                <th data-field="totalTaxPerc" data-sortable="false">Total Tax %</th>
-              </tr>
-            </thead>
-          </table>
-          <table id="taxdataOctTable" data-unique-id="ItemNo." data-sort-name="itemno" data-sort-order="asc"
-            class="table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="itemno" data-sortable="false">ItemNo.</th>
-                <th data-field="type" data-sortable="false">Type</th>
-                <th data-field="description" data-sortable="false">Description</th>
-                <th data-field="price" data-sortable="false">Price of Good or Service</th>
-                <th data-field="tax" data-sortable="true">Tax(GST/Excise/VAT/)</th>
-                <th data-field="bill" data-sortable="false">Bill</th>
-                <th data-field="comment" data-sortable="false">Comment</th>
-                <th data-field="total" data-sortable="false">Total Tax</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-      <div class="container">
-        <!-- div for Nov Button -->
-        <div class="d-grid gap-2 padding">
-          <button type="button" class="btn" data-bs-toggle="collapse"
-            data-bs-target="#tableNov" style="background-color: rgb(145, 97, 47)">Nov</button>
-        </div>
-        <!-- div for Nov Table -->
-        <div class="collapse table-bordered" id="tableNov">
-          <table id="novSalaryTaxTable" class="table table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="totalSalary" data-sortable="false">Total Salary</th>
-                <th data-field="directTax" data-sortable="false">Direct Tax</th>
-                <th data-field="directTaxPerc" data-sortable="false">Direct Tax %</th>
-                <th data-field="netSalary" data-sortable="false">Net Salary</th>
-                <th data-field="indirectTax" data-sortable="false">Indirect Tax</th>
-                <th data-field="indirectTaxPerc" data-sortable="false">Indirect Tax %</th>
-                <th data-field="totalTax" data-sortable="false">Total Tax</th>
-                <th data-field="totalTaxPerc" data-sortable="false">Total Tax %</th>
-              </tr>
-            </thead>
-          </table>
-          <table id="taxdataNovTable" data-unique-id="ItemNo." data-sort-name="itemno" data-sort-order="asc"
-            class="table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="itemno" data-sortable="false">ItemNo.</th>
-                <th data-field="type" data-sortable="false">Type</th>
-                <th data-field="description" data-sortable="false">Description</th>
-                <th data-field="price" data-sortable="false">Price of Good or Service</th>
-                <th data-field="tax" data-sortable="true">Tax(GST/Excise/VAT/)</th>
-                <th data-field="bill" data-sortable="false">Bill</th>
-                <th data-field="comment" data-sortable="false">Comment</th>
-                <th data-field="total" data-sortable="false">Total Tax</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-      <div class="container">
-        <!-- div for Dec Button -->
-        <div class="d-grid gap-2 padding">
-          <button type="button" class="btn" data-bs-toggle="collapse"
-            data-bs-target="#tableDec" style="background-color: rgb(145, 97, 47)">Dec</button>
-        </div>
-        <!-- div for Dec Table -->
-        <div class="collapse table-bordered" id="tableDec">
-          <table id="decSalaryTaxTable" class="table table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="totalSalary" data-sortable="false">Total Salary</th>
-                <th data-field="directTax" data-sortable="false">Direct Tax</th>
-                <th data-field="directTaxPerc" data-sortable="false">Direct Tax %</th>
-                <th data-field="netSalary" data-sortable="false">Net Salary</th>
-                <th data-field="indirectTax" data-sortable="false">Indirect Tax</th>
-                <th data-field="indirectTaxPerc" data-sortable="false">Indirect Tax %</th>
-                <th data-field="totalTax" data-sortable="false">Total Tax</th>
-                <th data-field="totalTaxPerc" data-sortable="false">Total Tax %</th>
-              </tr>
-            </thead>
-          </table>
-          <table id="taxdataDecTable" data-unique-id="ItemNo." data-sort-name="itemno" data-sort-order="asc"
-            class="table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="itemno" data-sortable="false">ItemNo.</th>
-                <th data-field="type" data-sortable="false">Type</th>
-                <th data-field="description" data-sortable="false">Description</th>
-                <th data-field="price" data-sortable="false">Price of Good or Service</th>
-                <th data-field="tax" data-sortable="true">Tax(GST/Excise/VAT/)</th>
-                <th data-field="bill" data-sortable="false">Bill</th>
-                <th data-field="comment" data-sortable="false">Comment</th>
-                <th data-field="total" data-sortable="false">Total Tax</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-      <div class="container">
-        <!-- div for Jan Button -->
-        <div class="d-grid gap-2 padding">
-          <button type="button" class="btn" data-bs-toggle="collapse"
-            data-bs-target="#tableJan" style="background-color: rgb(145, 97, 47)">Jan</button>
-        </div>
-        <!-- div for Jan Table -->
-        <div class="collapse table-bordered" id="tableJan">
-          <table id="janSalaryTaxTable" class="table table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="totalSalary" data-sortable="false">Total Salary</th>
-                <th data-field="directTax" data-sortable="false">Direct Tax</th>
-                <th data-field="directTaxPerc" data-sortable="false">Direct Tax %</th>
-                <th data-field="netSalary" data-sortable="false">Net Salary</th>
-                <th data-field="indirectTax" data-sortable="false">Indirect Tax</th>
-                <th data-field="indirectTaxPerc" data-sortable="false">Indirect Tax %</th>
-                <th data-field="totalTax" data-sortable="false">Total Tax</th>
-                <th data-field="totalTaxPerc" data-sortable="false">Total Tax %</th>
-              </tr>
-            </thead>
-          </table>
-          <table id="taxdataJanTable" data-unique-id="ItemNo." data-sort-name="itemno" data-sort-order="asc"
-            class="table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="itemno" data-sortable="false">ItemNo.</th>
-                <th data-field="type" data-sortable="false">Type</th>
-                <th data-field="description" data-sortable="false">Description</th>
-                <th data-field="price" data-sortable="false">Price of Good or Service</th>
-                <th data-field="tax" data-sortable="true">Tax(GST/Excise/VAT/)</th>
-                <th data-field="bill" data-sortable="false">Bill</th>
-                <th data-field="comment" data-sortable="false">Comment</th>
-                <th data-field="total" data-sortable="false">Total Tax</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-      <div class="container">
-        <!-- div for Feb Button -->
-        <div class="d-grid gap-2 padding">
-          <button type="button" class="btn" data-bs-toggle="collapse"
-            data-bs-target="#tableFeb" style="background-color: rgb(145, 97, 47)">Feb</button>
-        </div>
-        <!-- div for Feb Table -->
-        <div class="collapse table-bordered" id="tableFeb">
-          <table id="febSalaryTaxTable" class="table table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="totalSalary" data-sortable="false">Total Salary</th>
-                <th data-field="directTax" data-sortable="false">Direct Tax</th>
-                <th data-field="directTaxPerc" data-sortable="false">Direct Tax %</th>
-                <th data-field="netSalary" data-sortable="false">Net Salary</th>
-                <th data-field="indirectTax" data-sortable="false">Indirect Tax</th>
-                <th data-field="indirectTaxPerc" data-sortable="false">Indirect Tax %</th>
-                <th data-field="totalTax" data-sortable="false">Total Tax</th>
-                <th data-field="totalTaxPerc" data-sortable="false">Total Tax %</th>
-              </tr>
-            </thead>
-          </table>
-          <table id="taxdataFebTable" data-unique-id="ItemNo." data-sort-name="itemno" data-sort-order="asc"
-            class="table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="itemno" data-sortable="false">ItemNo.</th>
-                <th data-field="type" data-sortable="false">Type</th>
-                <th data-field="description" data-sortable="false">Description</th>
-                <th data-field="price" data-sortable="false">Price of Good or Service</th>
-                <th data-field="tax" data-sortable="true">Tax(GST/Excise/VAT/)</th>
-                <th data-field="bill" data-sortable="false">Bill</th>
-                <th data-field="comment" data-sortable="false">Comment</th>
-                <th data-field="total" data-sortable="false">Total Tax</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-      </div>
-      <div class="container">
-        <!-- div for Mar Button -->
-        <div class="d-grid gap-2 padding">
-          <button type="button" class="btn" data-bs-toggle="collapse"
-            data-bs-target="#tableMar" style="background-color: rgb(145, 97, 47)">Mar</button>
-        </div>
-        <!-- div for Mar Table -->
-        <div class="collapse table-bordered" id="tableMar">
-          <table id="marSalaryTaxTable" class="table table-color-brown">
-            <thead class="table-dark">
-              <tr>
-                <th data-field="totalSalary" data-sortable="false">Total Salary</th>
-                <th data-field="directTax" data-sortable="false">Direct Tax</th>
-                <th data-field="directTaxPerc" data-sortable="false">Direct Tax %</th>
-                <th data-field="netSalary" data-sortable="false">Net Salary</th>
-                <th data-field="indirectTax" data-sortable="false">Indirect Tax</th>
-                <th data-field="indirectTaxPerc" data-sortable="false">Indirect Tax %</th>
-                <th data-field="totalTax" data-sortable="false">Total Tax</th>
-                <th data-field="totalTaxPerc" data-sortable="false">Total Tax %</th>
-              </tr>
-            </thead>
-          </table>
-          <table id="taxdataMarTable" data-unique-id="ItemNo." data-sort-name="itemno" data-sort-order="asc"
-            class="table-color-brown">
+            class="class">
             <thead class="table-dark">
               <tr>
                 <th data-field="itemno" data-sortable="false">ItemNo.</th>
@@ -552,8 +142,8 @@
     </div>
   </div>
   <!-- About Us Div -->
-  <div id="aboutUsDiv" hidden><br>
-    <p class="fortypxfont div-para-color-brown">
+  <div id="aboutUsDiv" hidden>
+    <p class="fortypxfont">
       It is about US not me. I believe the actual tax paid by individual is much higher. The
       direct tax paid on income and indirect tax paid on every item purchased from taxed income
       is very higher. There is no study which shows total tax paid by individual or house hold
@@ -563,8 +153,8 @@
   </div>
   <!-- Mission Div -->
   <div id="ourMissionDiv" hidden>
-    <p><br>
-    <ol class="fortypxfont div-para-color-brown">
+    <p>
+    <ol class="fortypxfont">
       <li>To collect concrete data about actual tax paid.</li>
       <li>Making people aware about actual tax.</li>
       <li>Bulding orginization with people different walks of life.</li>
@@ -572,38 +162,75 @@
     </ol>
     </p>
   </div>
-  <!-- Contact US -->
-  <div id="contactUsDiv" hidden>
-    <p><br>
-    <ol class="fortypxfont div-para-color-brown">
-      <h3>Email : actualtaxpaid@gmail.com</h3>
-    </ol>
-    </p>
-  </div>
-  <div id="previousYearInfoDiv" hidden><br>
-    <p class="fortypxfont div-para-color-brown">The information of previous year direct tax paid by an individual concerned here.<br>
+  <div id="previousYearInfoDiv" hidden>
+    <p class="fortypxfont">The information of previous year direct tax paid by an individual concerned here.<br>
       The data of FY 2022-2023 is as of date.
-    <div class="container">
-      <table id="previousYearDataTable">
-        <thead class="table-dark">
-          <tr>
-            <th data-field="assessmentyear" data-sortable="false">Assessment Year</th>
-            <th data-field="taxableIncome" data-sortable="false">Taxable Income</th>
-            <th data-field="taxLiability" data-sortable="false">Tax Liability</th>
-            <th data-field="taxPerc" data-sortable="false">Tax %/th>
-          </tr>
-        </thead>
-      </table>
-    </div>
-    <div class="container">
-      <h3 style="text-align: center;">Screenshot taken from Income Tax Website</h3><br>
-      <img src="img/Table_Previous_Year.PNG" alt="Previous Year Data Missing" width="560" height="333">
-      <img src="img/Graph_Previous_Year.PNG" alt="Previous Year Data Missing" width="560" height="333">
-    </div>
+      <div class="container">
+        <table id="previousYearDataTable">
+            <thead class="table-dark">
+              <tr>
+                <th data-field="assessmentyear" data-sortable="false">Assessment Year</th>
+                <th data-field="taxableIncome" data-sortable="false">Taxable Income</th>
+                <th data-field="taxLiability" data-sortable="false">Tax Liability</th>
+                <th data-field="taxPerc" data-sortable="false">Tax %/th>
+              </tr>
+            </thead>
+          </table>
+          </div>
+        <div class="container">
+        <h3 style="text-align: center;">Screenshot taken from Income Tax Website</h3><br>
+        <img src="img/Table_Previous_Year.PNG" alt="Previous Year Data Missing" width="560" height="333">
+        <img src="img/Graph_Previous_Year.PNG" alt="Previous Year Data Missing" width="560" height="333">
+      </div>
 
     </p>
   </div>
-  <script src="compute/handleTableAndButton.js"></script>
+  <script>
+
+    // method for updating Div
+    function handleMenuButton(targetDiv, sourceDiv) {
+      document.getElementById(targetDiv).innerHTML = document.getElementById(sourceDiv).innerHTML;
+    }
+    // method for updating Div
+    $(function () {
+      // Salary and Tax top Table Handling
+      $(document).ready(function () {
+        var $salaryTaxTable = $('#salaryTaxTable');
+        $salaryTaxTable.bootstrapTable({
+          data: salaryAndTax
+        });
+        // April Total 
+        var $salaryTaxTable = $('#aprilSalaryTaxTable');
+        $salaryTaxTable.bootstrapTable({
+          data: salaryAndTax
+        });
+        // April Tax and Salary
+        var $taxdataAprilTable = $('#taxdataAprilTable');
+        $taxdataAprilTable.bootstrapTable({
+          data: purchaseAndTaxApril
+        });
+        $taxdataAprilTable.bootstrapTable('togglePagination');
+      });
+      // May Total
+      var $salaryTaxTable = $('#maySalaryTaxTable');
+      $salaryTaxTable.bootstrapTable({
+        data: salaryAndTax
+      });
+      // May Table Handling
+      var $taxdataMayTable = $('#taxdataMayTable');
+      $taxdataMayTable.bootstrapTable({
+        data: purchaseAndTaxApril
+      });
+      $taxdataMayTable.bootstrapTable('togglePagination');
+
+      //Previous year Table Handling
+      var $previousYearDataTable = $('#previousYearDataTable');
+      $previousYearDataTable.bootstrapTable({
+        data: previousYearData
+      });
+
+    });
+  </script>
 </body>
 
 </html>
