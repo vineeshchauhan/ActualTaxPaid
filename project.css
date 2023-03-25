@@ -123,3 +123,9 @@ body {
 .div-para-color-brown {
   background-color: rgb(145, 97, 47);
 }
+
+a:link {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  text-decoration: none;
+}
